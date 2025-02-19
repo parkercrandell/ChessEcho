@@ -15,14 +15,7 @@ public class Pawn : Piece
         {
             Piece p = GameController.instance.grid.CheckForPiece(pos + new Vector2Int(0, direction));
             // If there is a piece in the way you can move if its an enemy
-            if (p != null)
-            {
-                if (p.isWhite != isWhite)
-                {
-                    moves.Add(pos + new Vector2Int(0, direction));
-                }
-            }
-            else
+            if (p == null)
             {
                 moves.Add(pos + new Vector2Int(0, direction));
             }
